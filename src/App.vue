@@ -15,7 +15,9 @@ export default {
     Tasks,
   },
   data() {
-    tasks: [];
+    return {
+      tasks: [],
+    };
   },
   methods: {
     deleteTask(id) {
