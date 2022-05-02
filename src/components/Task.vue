@@ -1,5 +1,8 @@
 <template>
-  <div :class="[task.reminder ? 'reminder' : '', 'task']">
+  <div
+    @dblclick="$emit('toggle-reminder', task.id)"
+    :class="[task.reminder ? 'reminder' : '', 'task']"
+  >
     <h3>{{ task.text }}</h3>
     <i @click="onDelete(task.id)" class="fas fa-times"></i>
     <p>{{ task.day }}</p>
@@ -21,7 +24,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scope>
 .fas {
   color: red;
 }
